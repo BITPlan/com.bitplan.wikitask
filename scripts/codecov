@@ -1,0 +1,4 @@
+#!/bin/bash
+# WF 2020-04-26
+mvn test -D coverage
+bash <(curl -s https://codecov.io/bash)
