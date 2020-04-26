@@ -20,19 +20,23 @@
  */
 package org.sidif.wiki;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
+import java.util.logging.Logger;
 
-@RunWith(Suite.class)
-@Suite.SuiteClasses({ TestTripleStore.class, TestWikiTask.class, TestPageCache.class
-    })
 /**
- * TestSuite
- * 
+ * Base class for org.sidif.wiki unit tests
  * @author wf
  *
- *         no content necessary - annotation has info
  */
-public class TestSuite {
-  public static boolean debug=false;
+public class BaseTest {
+	 public static boolean debug = false;
+	 protected static Logger LOGGER = Logger.getLogger("org.sidif.wiki");
+	 /**
+	   * check if we are in the Travis-CI environment
+	   * 
+	   * @return true if Travis user was detected
+	   */
+	  public boolean isTravis() {
+	    String user = System.getProperty("user.name");
+	    return user.equals("travis");
+	  }
 }

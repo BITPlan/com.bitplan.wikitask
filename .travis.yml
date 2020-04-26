@@ -10,6 +10,8 @@ install: mvn install -DskipTests=true -Dgpg.skip=true
 # do the tests separately after xvfb has been installed
 script: mvn test -D coverage 
 # see https://github.com/trautonen/coveralls-maven-plugin
-# put the coverage results on codecov.io
-after_success:
-- bash <(curl -s https://codecov.io/bash)
+# do not put the coverage results on codecov.io
+# since quite a few tests can't be run without credentials
+# you might want to run scripts/codecov in your own environment with credentials instead
+# after_success:
+#- bash <(curl -s https://codecov.io/bash)

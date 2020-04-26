@@ -132,7 +132,7 @@ public class SMW_Triples {
    * @throws Exception 
    */
   public static TripleStore fromWiki(String localSettingsFilename, String query) throws Exception {
-    String localSettings=FileUtils.readFileToString(new File(localSettingsFilename));
+    String localSettings=FileUtils.readFileToString(new File(localSettingsFilename),"utf-8");
     Map<String, String> settings = getVariables(localSettings);
     String host=getVariable("wgDBserver",settings);
     String database=getVariable("wgDBname",settings);
@@ -172,7 +172,5 @@ public class SMW_Triples {
     }
     return result;
   }
-
-	
    
 }
