@@ -451,8 +451,7 @@ public class WikiTask implements Callable<WikiTaskResult>,Cloneable {
    */
   public void prepareWiki() throws Exception {
     if (sslWiki == null) {
-      sslWiki = new SSLWiki(server, scriptpath,
-          wikiid);
+      sslWiki = SSLWiki.ofId(wikiid);
       sslWiki.login();
     }
     referenceManager = ReferenceManager.get(sslWiki);

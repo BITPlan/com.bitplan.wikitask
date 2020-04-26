@@ -26,6 +26,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.bitplan.mediawiki.japi.user.WikiUser;
 import com.bitplan.rest.Crypt;
 import com.bitplan.rest.CryptImpl;
 
@@ -36,41 +37,24 @@ import com.bitplan.rest.CryptImpl;
  *         certificate -errors-in-apache-httpclient-4-0
  */
 public class SSLWiki extends com.bitplan.mediawiki.japi.SSLWiki {
+  
+  private String wikiId;
+
+
+  /**
+   * create an SSL Wiki for the given wikiUser
+   * @param wikiUser
+   * @param wikiId 
+   * @throws Exception
+   */
+  public SSLWiki(WikiUser wikiUser, String wikiId) throws Exception {
+    super(wikiUser);
+    this.wikiId=wikiId;
+  }
+
   public static boolean debug=false;
   protected static Logger LOGGER = Logger.getLogger("com.bitplan.mediawiki.japi.SSLWiki");
   
-	/**
-	 * constructor
-	 * 
-	 * @param url
-	 * @throws Exception
-	 */
-	public SSLWiki(String url) throws Exception {
-		super(url);
-	}
-
-	/**
-	 * construct me from an url and scriptPath
-	 * 
-	 * @param url
-	 * @param scriptPath
-	 * @throws Exception
-	 */
-	public SSLWiki(String url, String scriptPath) throws Exception {
-		super(url, scriptPath);
-	}
-
-	/**
-	 * constructor with three params
-	 * 
-	 * @param url
-	 * @param scriptPath
-	 * @param wikiid
-	 * @throws Exception
-	 */
-	public SSLWiki(String url, String scriptPath, String wikiid) throws Exception {
-		super(url, scriptPath,wikiid);
-	}
 	
 	/**
    * get the path to the initialization files
@@ -114,6 +98,41 @@ public class SSLWiki extends com.bitplan.mediawiki.japi.SSLWiki {
     if (debug) {
       System.setProperty("javax.net.debug","ssl");  // very verbose debug
     }
+  }
+  
+  /**
+   * create an SSLWiki from the given wikiId and user
+   * 
+   * @param wikiId
+   * @param user
+   * @return
+   * @throws Exception
+   */
+  public static SSLWiki ofIdAndUser(String wikiId, String user)
+      throws Exception {
+    WikiUser wikiUser = WikiUser.getUser(wikiId, user);
+    SSLWiki wiki = new SSLWiki(wikiUser,wikiId);
+    return wiki;
+  }
+  
+  /**
+   * create a wiki for the given wikiId
+   * 
+   * @param wikiId
+   * @return
+   * @throws Exception
+   */
+  public static SSLWiki ofId(String wikiId) throws Exception {
+    String user = System.getProperty("user.name");
+    return ofIdAndUser(wikiId, user);
+  }
+  
+  /**
+   * get the wikiID of this wiki
+   * @return the wiki id
+   */
+  public String getWikiid() {
+    return this.wikiId;
   }
   
 }

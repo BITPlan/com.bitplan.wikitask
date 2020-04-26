@@ -388,9 +388,7 @@ public class ReferenceManager {
 		if (rm == null) {
 			LOGGER.log(Level.WARNING, "ReferenceManager for wikiid " + wikiid
 					+ " not found - loading it from SSLWiki");
-			Wiki wiki = WikiManager.getWiki(wikiid);
-			SSLWiki lSslWiki = new SSLWiki(wiki.getSiteurl(), wiki.getScriptPath(),
-					wikiid);
+			SSLWiki lSslWiki = SSLWiki.ofId(wikiid);
 			lSslWiki.login();
 			rm = get(lSslWiki);
 		}
