@@ -206,6 +206,7 @@ public class TestPageCache extends BaseTest {
    */
   @Test
   public void testSectionCache() throws Exception {
+    if (this.isTravis()) return;
     PageCache lpageCache = getPageCache();
     String topicGeneratorPage = "TopicGenerator";
     lpageCache.getPageContent(topicGeneratorPage);
@@ -218,6 +219,7 @@ public class TestPageCache extends BaseTest {
 
   @Test
   public void testGetImageInfo() throws Exception {
+    if (this.isTravis()) return;
     Ii imageInfo = getWiki().getImageInfo("File:Registry.png");
     if (debug)
       System.out.println(imageInfo.getUrl());
