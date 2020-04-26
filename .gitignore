@@ -23,3 +23,6 @@
 hs_err_pid*
 /bin/
 /target/
+
+# ignore eclipse settings
+.settings
