@@ -24,7 +24,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ TestTripleStore.class, TestWikiTask.class, TestPageCache.class
+@Suite.SuiteClasses({ TestFreeMarker.class,TestTripleStore.class, TestWikiTask.class, TestPageCache.class
     })
 /**
  * TestSuite
