@@ -40,7 +40,7 @@ public class WikiManager extends WikiStatic.WikiManager {
 	 /**
    * get the local Settings for the given wikiid
    * @param wikiid
-   * @return
+   * @return local settings for the given wikiid
    * @throws FileNotFoundException
    * @throws IOException
    */
@@ -58,7 +58,7 @@ public class WikiManager extends WikiStatic.WikiManager {
   /**
    * get the wiki for the given id
    * @param wikiid
-   * @return
+   * @return Wiki
    * @throws Exception
    */
   public static WikiStatic.Wiki getWiki(String wikiid) throws Exception {

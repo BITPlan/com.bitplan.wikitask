@@ -92,7 +92,7 @@ public class WikiTaskResult {
 		/**
 		 * get the json equivalent of this result
 		 * 
-		 * @return
+		 * @return the JSON equivalent of the result
 		 * @throws JAXBException
 		 */
 		public String asJson() throws JAXBException {
@@ -114,7 +114,7 @@ public class WikiTaskResult {
 	 * 
 	 * @param mediaType - e.g. application/json
 	 * 
-	 * @return
+	 * @return Response
 	 * @throws Throwable
 	 */
 	public Response getResponse(String mediaType) throws Throwable {

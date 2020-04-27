@@ -104,7 +104,7 @@ public class TopicStatic {
      * 
      * @param name
      * @param value
-     * @return
+     * @return the SiDIF representation for the given name and value
      */
     public static String propertySiDIF(String name, String value) {
       String result = propertySiDIF(name, value, "Text");
@@ -390,7 +390,7 @@ public class TopicStatic {
     /**
      * return me as a SiDIF string
      * 
-     * @return
+     * @return my SiDIF representation
      */
     public String asSiDIF() {
       String result = "";
@@ -411,7 +411,7 @@ public class TopicStatic {
     /**
      * accessor for 1:n relation to topics
      * 
-     * @return
+     * @return the list of Topics
      */
     public List<Topic> getTopics() {
       return topics.mTopics;
@@ -434,7 +434,7 @@ public class TopicStatic {
      * get the Topic by the given topicName
      * 
      * @param topicName
-     * @return
+     * @return the Topic for the given topicName
      */
     public Topic byName(String topicName) {
       Topic result = this.topics.byName(topicName);
@@ -516,7 +516,7 @@ public class TopicStatic {
     /**
      * run pass 2 to link topics to context and properties to topics
      * 
-     * @return
+     * @return a list of error messages
      */
     public List<String> pass2() {
       List<String> result = new ArrayList<String>();
@@ -574,7 +574,7 @@ public class TopicStatic {
     /**
      * get my contexts
      * 
-     * @return
+     * @return the list of Contexts
      */
     public List<Context> getContexts() {
       List<Context> result = this.mContexts;
@@ -585,7 +585,7 @@ public class TopicStatic {
      * get the given context by name
      * 
      * @param name
-     * @return
+     * @return the Context for the given name
      */
     public Context byName(String name) {
       Context result = this.mContextMap.get(name);
@@ -595,7 +595,7 @@ public class TopicStatic {
     /**
      * return me as a SiDIF representation
      * 
-     * @return
+     * @return my SiDIF representation
      */
     public String asSiDIF() {
       String result = "";
@@ -829,7 +829,7 @@ public class TopicStatic {
     /**
      * get the Properties
      * 
-     * @return
+     * @return the list of Properties
      */
     public List<Property> getProperties() {
       return properties.mPropertys;
@@ -950,7 +950,7 @@ public class TopicStatic {
     /**
      * get the Properties sorted by index
      * 
-     * @return
+     * @return the List of properties sorted by Index
      */
     public List<Property> propertiesByIndex() {
       List<Property> properties = new ArrayList<Property>(
@@ -979,7 +979,7 @@ public class TopicStatic {
     /**
      * get the list of sort Properties in the order of sorting
      * 
-     * @return
+     * @return the list of sortProperties
      */
     public List<Property> sortProperties() {
       Map<Integer, Property> propMap = new HashMap<Integer, Property>();
@@ -1710,7 +1710,7 @@ public class TopicStatic {
     /**
      * return whether this property is Ascending
      * 
-     * @return
+     * @return true if property is sorting ascending
      */
     public boolean sortAscending() {
       boolean result = getSortPosValue() >= 0;
@@ -1720,7 +1720,7 @@ public class TopicStatic {
     /**
      * get the sort Position of this property
      * 
-     * @return
+     * @return the sort position of the property as a positive integer
      */
     public int getSortPosition() {
       int result = Math.abs(getSortPosValue());

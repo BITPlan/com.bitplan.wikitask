@@ -29,8 +29,10 @@ import java.util.Date;
 /**
  * ResultSetDelegate (aka Adapter) that implements the DataSource interface
  * goal: avoid dependency to java.sql in package
- * @see <a href="http://warren.mayocchi.com/2006/10/13/jdbc-resultset-mapper/">Warren Mayocchi Blog - JDBC ResultSet Mapper</a>
- * @see <a href="http://resultsetmapper.sourceforge.net">ResultSetMapper on sourceforge.net</a>
+ * 
+ * See <a href="http://warren.mayocchi.com/2006/10/13/jdbc-resultset-mapper/">Warren Mayocchi Blog - JDBC ResultSet Mapper</a>
+ * See <a href="http://resultsetmapper.sourceforge.net">ResultSetMapper on sourceforge</a>
+ 
  * 
  * modified by:
  *  

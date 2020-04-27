@@ -212,7 +212,7 @@ public class ContextFactory {
 	/**
 	 * singleton access to the context Factory
 	 * 
-	 * @return
+	 * @return the ContextFactory singleton instance
 	 */
 	public static ContextFactory getInstance() {
 		if (instance == null) {

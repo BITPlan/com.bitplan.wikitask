@@ -43,7 +43,7 @@ public class TripleStoreManager {
 	 * get the TripleStore with the given id
 	 * 
 	 * @param id
-	 * @return
+	 * @return TripleStore
 	 */
 	public TripleStore getById(String id) {
 		LOGGER.log(Level.INFO, "getting triplestore with id " + id);
@@ -64,7 +64,7 @@ public class TripleStoreManager {
 	/**
 	 * singleton access
 	 * 
-	 * @return
+	 * @return TripleStoreManager
 	 */
 	public static TripleStoreManager getInstance() {
 		if (instance == null) {
@@ -78,7 +78,7 @@ public class TripleStoreManager {
 	 * 
 	 * @param id
 	 * @param sidifText
-	 * @return
+	 * @return TripleStore
 	 * @throws Exception
 	 */
 	public TripleStore addBySiDIF(String id, String sidifText) throws Exception {
@@ -92,7 +92,7 @@ public class TripleStoreManager {
 	 * 
 	 * @param referenceManager
 	 * @param inputLink
-	 * @return
+	 * @return TripleStore
 	 * @throws Exception
 	 */
 	public TripleStore getByReference(ReferenceManager referenceManager,

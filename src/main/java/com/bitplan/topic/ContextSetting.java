@@ -245,7 +245,7 @@ public class ContextSetting {
   /**
    * get the context setting for the given WikiTask as SiDIF
    * @param wikiTask
-   * @return
+   * @return the ContextSetting for the given wikiTask
    */
   public static ContextSetting fromWikiTaskAsSiDIF(WikiTask wikiTask) {
     ContextSetting cs=fromWikiTask(wikiTask);

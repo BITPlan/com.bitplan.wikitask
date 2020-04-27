@@ -424,9 +424,9 @@ public class WikiTask implements Callable<WikiTaskResult>,Cloneable {
   /**
    * create a html formatted error message
    * 
+   * @param error
    * @param msg
    * @param stacktrace
-   * @param msg2
    * @return the error message
    * @throws Exception
    */
@@ -607,7 +607,7 @@ public class WikiTask implements Callable<WikiTaskResult>,Cloneable {
   /**
    * get the WikiTask Home
    * 
-   * @return
+   * @return wiki task property file directory
    */
   public static String getWikiTaskHome() {
     String wikiTaskHome = System.getProperty("user.home") + "/.wikitask/";
@@ -664,7 +664,7 @@ public class WikiTask implements Callable<WikiTaskResult>,Cloneable {
    * get the right for the given name
    * 
    * @param name
-   * @return
+   * @return the AccessRight for the given name
    * @throws Exception
    */
   public AccessRight getRight(String name) throws Exception {
@@ -793,7 +793,7 @@ public class WikiTask implements Callable<WikiTaskResult>,Cloneable {
    * 
    * @param reference
    * @param title
-   * @return
+   * @return the template processing result
    * @throws Exception
    */
   public synchronized String processTemplate(Reference reference, String title)
@@ -892,7 +892,7 @@ public class WikiTask implements Callable<WikiTaskResult>,Cloneable {
   /**
    * get the PageUrl of the given page
    * 
-   * @return
+   * @return the page url
    */
   public String getPageUrl() {
     String url;
@@ -964,7 +964,7 @@ public class WikiTask implements Callable<WikiTaskResult>,Cloneable {
    * get the URI for a given targetpage
    * 
    * @param targetpage
-   * @return
+   * @return the URI for the given targetpage
    * @throws URISyntaxException
    */
   public URI getPageUri(String targetpage) throws URISyntaxException {

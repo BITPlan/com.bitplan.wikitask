@@ -79,7 +79,7 @@ public class WikiTaskManager {
 	
 	/**
 	 * get the singleton for the WikiTask Manager
-	 * @return
+	 * @return the WikiTaskManager singleton
 	 */
 	public static WikiTaskManager getInstance() {
 		if (instance==null) {

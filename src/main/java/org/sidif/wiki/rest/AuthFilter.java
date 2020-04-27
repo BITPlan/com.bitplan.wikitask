@@ -60,7 +60,7 @@ public class AuthFilter implements ContainerRequestFilter {
    * get the accessRight for the given address
    * 
    * @param addr
-   * @return
+   * @return the AccessRight
    */
   public AccessRight getAccessRight(String addr) {
     AccessRight accessRight = accessRights.get(addr);

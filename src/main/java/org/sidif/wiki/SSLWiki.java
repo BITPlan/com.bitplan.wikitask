@@ -70,7 +70,7 @@ public class SSLWiki extends com.bitplan.mediawiki.japi.SSLWiki {
   }
   /**
    * get the encryption
-   * @return
+   * @return Crypt
    */
   public static Crypt getCrypt(String prefix) {
     Crypt pcf = new CryptImpl(prefix+"KBKMhZb57ljt5pR3rC271w9w7V1NWdojRa", "Z3A0VBSR");
@@ -105,7 +105,7 @@ public class SSLWiki extends com.bitplan.mediawiki.japi.SSLWiki {
    * 
    * @param wikiId
    * @param user
-   * @return
+   * @return SSLWiki
    * @throws Exception
    */
   public static SSLWiki ofIdAndUser(String wikiId, String user)
@@ -119,7 +119,7 @@ public class SSLWiki extends com.bitplan.mediawiki.japi.SSLWiki {
    * create a wiki for the given wikiId
    * 
    * @param wikiId
-   * @return
+   * @return created SSLWiki
    * @throws Exception
    */
   public static SSLWiki ofId(String wikiId) throws Exception {
