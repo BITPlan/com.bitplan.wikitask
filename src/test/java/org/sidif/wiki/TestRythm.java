@@ -155,6 +155,8 @@ public class TestRythm extends BaseTest {
    */
   @Test
   public void testResourceLoader() throws Exception {
+    if (this.isTravis())
+      return;
     String template="@include(wiki.ExampleRythm.template1)\n@wiki.ExampleRythm.template1(\"rythm\")";
     RythmEngine engine = getResourceLoaderEngine();
     String result=engine.render(template,"noargs");
@@ -165,6 +167,8 @@ public class TestRythm extends BaseTest {
   
   @Test
   public void testInclude() throws Exception {
+    if (this.isTravis())
+      return;
     String template="@include(wiki.ExampleRythm.defs)\n@wiki.ExampleRythm.showtopic(\"rythm\")";
     RythmEngine engine = getResourceLoaderEngine();
     String result=engine.render(template,"noargs");
