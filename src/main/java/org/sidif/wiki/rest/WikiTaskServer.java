@@ -42,17 +42,21 @@ public class WikiTaskServer extends RestServerImpl {
     super();
     settings.setHost("0.0.0.0");
     settings.setPort(9089);
-    String packages="org.sidif.wiki.resources;org.sidif.wiki.rest;com.bitplan.resthelper.resources;";
+    String packages="org.sidif.wiki.resources;org.sidif.wiki.rest;";
+    // com.bitplan.resthelper.resources;
     settings.setContextPath("/wikiserver".toLowerCase());
-    settings.addClassPathHandler("/resthtmlview", "com/bitplan/resthtmlview/webcontent/");
-    settings.addClassPathHandler("/stockicons","com/bitplan/icons/");
-    settings.addClassPathHandler("/fileicon", "com/bitplan/clientutils/rest/icons/");
+    // add a static handler
+    settings.addClassPathHandler("/", "com/bitplan/wikitask/webcontent/");
+    //settings.addClassPathHandler("/resthtmlview", "com/bitplan/resthtmlview/webcontent/");
+    //settings.addClassPathHandler("/stockicons","com/bitplan/icons/");
+    // settings.addClassPathHandler("/fileicon", "com/bitplan/clientutils/rest/icons/");
     settings.setPackages(packages);
     // super.useFastJson=false;
     // Authentication
     // useServlet=true;
     String[] requestFilters={"org.sidif.wiki.rest.AuthFilter"};
     settings.setContainerRequestFilters(requestFilters);
+    // default access rights for localhost
     AuthFilter.accessRights.put("127.0.0.1", AccessRight.write);
     AuthFilter.accessRights.put("fe80:0:0:0:0:0:0:1%1",AccessRight.write);
     AuthFilter.accessRights.put("0:0:0:0:0:0:0:1",AccessRight.write);
