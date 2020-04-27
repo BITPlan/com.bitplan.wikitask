@@ -161,7 +161,7 @@ public class Reference extends CachedImpl {
    * get the page Url for the given pageTitle
    * 
    * @param pageTitle
-   * @return
+   * @return the pageUrl
    */
   public String getPageUrl(String pageTitle) {
     String siteurl=this.wiki.getSiteurl();

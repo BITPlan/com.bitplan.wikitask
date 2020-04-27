@@ -56,7 +56,7 @@ public class SMW_Triples {
   /**
    * get the name value map of variable settings
    * @param settings
-   * @return
+   * @return the name/value Map
    */
   public static Map<String,String> getVariables(String settings) {
     Map<String,String> result=new HashMap<String,String>();
@@ -93,7 +93,7 @@ public class SMW_Triples {
   /**
    * get the query with the given where clause
    * @param where
-   * @return
+   * @return the query with the where clause appended
    */
   public static String getQuery(String where) {
 		return tripleSQLQuery+" "+where;
@@ -102,7 +102,7 @@ public class SMW_Triples {
   /**
    * get the tripleStore from the given query
    * @param query
-   * @return
+   * @return the TripleStore
    * @throws Exception
    */
   public static TripleStore fromQuery(String wikiId,String query) throws Exception {
@@ -114,7 +114,7 @@ public class SMW_Triples {
   /**
    * get the tripleStore from the given localSettingsFilename
    * @param localSettingsFilename
-   * @return
+   * @return the TripleStore
    * @throws Exception
    */
   public static TripleStore fromWiki(String localSettingsFilename) throws Exception {
@@ -127,8 +127,9 @@ public class SMW_Triples {
   
   /**
    * get the TripleStore from the given Wiki
-   * @param localSettings 
-   * @return
+   * @param localSettingsFilename
+   * @param query
+   * @return the TripleStore
    * @throws Exception 
    */
   public static TripleStore fromWiki(String localSettingsFilename, String query) throws Exception {
@@ -149,7 +150,7 @@ public class SMW_Triples {
    * @param user 
    * @param password 
    * @param query - the query to execute
-   * @return
+   * @return the TripleStore
    * @throws Exception 
    */
   public static TripleStore fromJDBC(String host,String database, String user, String password, String query) throws Exception {

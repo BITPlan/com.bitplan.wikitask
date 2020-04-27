@@ -37,9 +37,7 @@ import com.sun.jersey.spi.container.ContainerRequestFilter;
  * 
  * @author msf
  * @author wf
- * @see http
- *      ://simplapi.wordpress.com/2013/01/24/jersey-jax-rs-implements-a-http-
- *      basic-auth-decoder/     
+ * @see <a href="http://simplapi.wordpress.com/2013/01/24/jersey-jax-rs-implements-a-http-basic-auth-decoder/">Jersey (JAX-RS) implements a HTTP Basic Auth decoder</a>     
  * @since 10.07.2013
  * @version 1.1
  * 

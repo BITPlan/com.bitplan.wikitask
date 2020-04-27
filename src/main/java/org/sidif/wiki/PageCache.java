@@ -204,8 +204,8 @@ public class PageCache {
     }
 
     /**
-     * @param Sectionlist
-     *          the sectionlist to set
+     * @param sectionlist
+     *          the section list to set
      */
     public void setSectionlist(List<S> sectionlist) {
       this.sectionlist = sectionlist;
@@ -269,7 +269,7 @@ public class PageCache {
   /**
    * get the siteinfo for the wiki
    * 
-   * @return
+   * @return the siteinfo
    * @throws Exception
    */
   public SiteInfo getSiteInfo() throws Exception {
@@ -427,7 +427,7 @@ public class PageCache {
    * 
    * @param pageTitle
    * @param normalizedAnchor
-   * @return
+   * @return the given Section
    * @throws Exception
    */
   public Section getSectionByAnchor(String pageTitle, String normalizedAnchor)
@@ -440,9 +440,9 @@ public class PageCache {
   /**
    * get the given section by anchor
    * 
-   * @param pageTitle
+   * @param pageInfo
    * @param normalizedAnchor
-   * @return
+   * @return the Section
    * @throws Exception
    */
   public Section getSectionByAnchor(PageInfo pageInfo, String normalizedAnchor)
@@ -486,8 +486,8 @@ public class PageCache {
    * get the SectionText for the given pageTitle and sectionIndex
    * 
    * @param pageTitle
-   * @param sectio
-   * @return
+   * @param section
+   * @return the section text
    * @throws Exception
    */
   public String getSectionText(String pageTitle, Section section)
@@ -502,7 +502,7 @@ public class PageCache {
    * 
    * @param pageInfo
    * @param section
-   * @return
+   * @return the section text
    * @throws Exception
    */
   private String getSectionText(PageInfo pageInfo, Section section)
@@ -516,7 +516,7 @@ public class PageCache {
    * get the Pages for the given title List
    * 
    * @param titleList
-   * @return
+   * @return a List of pages
    * @throws Exception
    */
   public List<Page> getPages(List<String> titleList) throws Exception {
@@ -582,9 +582,9 @@ public class PageCache {
   /**
    * get the lastModified File from the given directory with the given extension
    * 
-   * @param dir
+   * @param fl
    * @param ext
-   * @return
+   * @return the latest modified file
    */
   public static File lastFileModified(File fl, final String ext) {
     File[] files = fl.listFiles(new FileFilter() {
@@ -608,8 +608,8 @@ public class PageCache {
   /**
    * recache the given pageFrom the file cache
    * 
-   * @param pageTitle
-   * @return
+   * @param pageInfo
+   * @return the recached Page
    * @throws Exception
    */
   public Page recachePageFromFileCache(PageInfo pageInfo) throws Exception {
@@ -765,7 +765,7 @@ public class PageCache {
    * get the page for the given title
    * 
    * @param pageTitle
-   * @return
+   * @return the Page for the given pageTitle
    * @throws Exception
    */
   public Page getPage(String pageTitle) throws Exception {
@@ -809,7 +809,7 @@ public class PageCache {
    * get the pageRevision of the given page
    * 
    * @param page
-   * @return
+   * @return the Revision of the given Page
    */
   public static Rev getPageRevision(Page page) {
     List<Rev> revs = page.getRevisions();
@@ -825,7 +825,7 @@ public class PageCache {
    * get the Content of a single page
    * 
    * @param pageTitle
-   * @return
+   * @return the page content for the page
    * @throws Exception
    */
   public String getPageContent(String pageTitle) throws Exception {

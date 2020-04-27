@@ -20,20 +20,6 @@
  */
 package com.bitplan.storage.jdbc;
 
-/**
- * Copyright (C) 2011 BITPlan GmbH
-
- Pater-Delp-Str. 1
- D-47877 Willich-Schiefbahn
-
- http://www.bitplan.com
-
- $HeadURL$
- $LastChangedDate$
- $LastChangedRevision$
- $LastChangedBy$
- $Id$
- */
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -44,10 +30,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.google.inject.Inject;
-import com.google.inject.Injector;
 
 /**
- * MySQL Storage adapter
+ * JDBC Storage adapter mostly used with MySQL
  * 
  * @author wf
  * 
@@ -84,7 +69,7 @@ public class JDBCStorage implements JDBCConnectionHolder {
 	 * execute the given Query
 	 * 
 	 * @param sql
-	 * @return
+	 * @return the ResultSet
 	 * @throws Exception
 	 */
 	public ResultSet executeQuery(String sql) throws Exception {
@@ -103,8 +88,8 @@ public class JDBCStorage implements JDBCConnectionHolder {
 	/**
 	 * execute the given query
 	 * 
-	 * @param squery
-	 * @return
+	 * @param squery the SQL query to execute
+	 * @return the DataSource
 	 * @throws Exception
 	 */
 	public DataSource executeQuery(JDBCQuery squery) throws Exception {
@@ -126,7 +111,7 @@ public class JDBCStorage implements JDBCConnectionHolder {
 	/**
 	 * execute the given update/insert statement
 	 * @param sql
-	 * @return
+	 * @return -1 on failure else the statement.execUpdate result
 	 * @throws Exception
 	 */
 	public int executeUpdate(String sql) throws Exception {
@@ -147,7 +132,7 @@ public class JDBCStorage implements JDBCConnectionHolder {
 	 * 
 	 * @param entityClassname
 	 * @param sql
-	 * @return
+	 * @return the JDBCQuery
 	 */
 	public JDBCQuery createQuery(String entityClassname, String sql) {
 		JDBCQuery query = new JDBCQuery(entityClassname);
@@ -164,7 +149,7 @@ public class JDBCStorage implements JDBCConnectionHolder {
 	 * @param name
 	 * @param value
 	 * @param like
-	 * @return
+	 * @return the JDBCQuery
 	 */
 	public JDBCQuery createQuery(String entityClassname, String name,
 			String value, boolean like) {
@@ -178,7 +163,7 @@ public class JDBCStorage implements JDBCConnectionHolder {
 	 * 
 	 * @param columnType
 	 * @param value
-	 * @return
+	 * @return the value
 	 */
 	public String getInsertValue(String columnType, Object value) {
 		String valueString="null";

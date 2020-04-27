@@ -20,6 +20,7 @@
  */
 package org.sidif.wiki.rest;
 
+import org.kohsuke.args4j.Option;
 import org.sidif.wiki.rest.AuthFilter.AccessRight;
 
 import com.bitplan.rest.RestServerImpl;

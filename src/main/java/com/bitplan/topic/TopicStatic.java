@@ -147,7 +147,7 @@ public class TopicStatic {
     /**
      * get the technical aspects
      * 
-     * @return
+     * @return the list of YTs
      */
     public List<YT> getYTs() {
       if (yTs == null) {
@@ -257,10 +257,10 @@ public class TopicStatic {
     }
 
     /**
-     * get the page Title for the given topic name
+     * get the page Title for the given topic
      * 
-     * @param topicname
-     * @return
+     * @param topic
+     * @return the page title
      */
     public String getPageTitle(Topic topic) {
       String result = this.name + ":" + topic.name;
@@ -851,8 +851,7 @@ public class TopicStatic {
 
     /**
      * initialize me with the given query
-     * 
-     * @Override
+     * @param query - the TripleQuery to use for initialization
      */
     public void init(TripleQuery query) {
       // pass2 does this in a query indepent way ...
@@ -1021,7 +1020,7 @@ public class TopicStatic {
     /**
      * return me as a SiDIF string
      * 
-     * @return
+     * @return my SiDIF representation
      */
     public String asSiDIF() {
       String result = "";
@@ -1693,7 +1692,7 @@ public class TopicStatic {
 
     /**
      * get the sort Position value in a safe way that will not throw an exception - log any problems
-     * @return
+     * @return the sort position value
      */
     public int getSortPosValue() {
       int result = 0;

@@ -140,9 +140,8 @@ public class ContextFactory {
 	/**
 	 * get the context Manager
 	 * 
-	 * @param wikiid
-	 * @param from
-	 * @return
+	 * @param cs
+	 * @return the ContextManager
 	 */
 	public ContextManager getContextManager(ContextSetting cs) {
 		TripleStoreManager tm = TripleStoreManager.getInstance();
@@ -183,8 +182,8 @@ public class ContextFactory {
 	/**
 	 * get the context with the given name
 	 * 
-	 * @param contextName
-	 * @return
+	 * @param cs
+	 * @return the Context
 	 */
 	public Context getContext(ContextSetting cs) {
 		ContextManager contextManager = this.getContextManager(cs);

@@ -199,7 +199,7 @@ public class ContextSetting {
   /**
    * create a SMWContextSetting from me
    * 
-   * @return
+   * @return the ContextSetting
    */
   public ContextSetting asSMWContextSetting() {
     String json = this.toJson();
@@ -234,7 +234,7 @@ public class ContextSetting {
   /**
    * get the context Setting for this WikiTask
    * 
-   * @return
+   * @return the ContextSetting
    */
   public static ContextSetting fromWikiTask(WikiTask wikiTask) {
     ContextSetting cs = ContextSetting.fromParams(wikiTask.getParams());

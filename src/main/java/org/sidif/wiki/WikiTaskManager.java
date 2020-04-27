@@ -44,7 +44,7 @@ public class WikiTaskManager {
 	 * launcher for a Wiki Task
 	 * 
 	 * @param wikiTask
-	 * @return
+	 * @return the WikiTaskResult
 	 * @throws Exception
 	 */
 	public WikiTaskResult run(WikiTask wikiTask) throws Exception {

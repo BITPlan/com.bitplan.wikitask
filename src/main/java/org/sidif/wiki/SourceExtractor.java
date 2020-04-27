@@ -63,8 +63,8 @@ public class SourceExtractor {
    * extract a Source from the given SourceTag by extracting the attribute
    * information
    * 
-   * @sourceTag - the sourceTag information
-   * @return
+   * @param sourceTag - the sourceTag information
+   * @return the Source
    * @throws Exception
    */
   public static Source extractSourceTag(String sourceTag) throws Exception {

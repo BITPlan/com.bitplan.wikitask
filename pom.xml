@@ -116,7 +116,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>com.bitplan.wikitask.CmdLine</mainClass>
+							<mainClass>org.sidif.wiki.rest.WikiTaskServer</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -129,7 +129,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.bitplan.wikitask.CmdLine</mainClass>
+							<mainClass>org.sidif.wiki.rest.WikiTaskServer</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>

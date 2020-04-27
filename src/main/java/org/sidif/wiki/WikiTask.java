@@ -427,7 +427,7 @@ public class WikiTask implements Callable<WikiTaskResult>,Cloneable {
    * @param msg
    * @param stacktrace
    * @param msg2
-   * @return
+   * @return the error message
    * @throws Exception
    */
   public String error(String error, String msg, String stacktrace)
@@ -580,7 +580,7 @@ public class WikiTask implements Callable<WikiTaskResult>,Cloneable {
   /**
    * get help
    * 
-   * @return
+   * @return the help string
    * @throws Exception
    */
   public String help() throws Exception {
@@ -618,7 +618,7 @@ public class WikiTask implements Callable<WikiTaskResult>,Cloneable {
    * get a property File for the given Kind
    * 
    * @param propertyKind
-   * @return
+   * @return the property File
    */
   public static File getPropertyFile(String propertyKind) {
     File propFile = getPropertyFile(propertyKind, ".ini");
@@ -630,7 +630,7 @@ public class WikiTask implements Callable<WikiTaskResult>,Cloneable {
    * 
    * @param propertyKind
    * @param extension
-   * @return
+   * @return the property File
    */
   public static File getPropertyFile(String propertyKind, String extension) {
     String propertyFileName = getWikiTaskHome() + propertyKind + extension;
@@ -651,7 +651,7 @@ public class WikiTask implements Callable<WikiTaskResult>,Cloneable {
   /**
    * get the LocalSettings File for this WikiTask
    * 
-   * @return
+   * @return the local settings
    * @throws FileNotFoundException
    * @throws IOException
    */
@@ -732,7 +732,7 @@ public class WikiTask implements Callable<WikiTaskResult>,Cloneable {
   /**
    * get the tripleStore
    * 
-   * @return
+   * @return the TripleStore
    * @throws Exception
    */
   public TripleStore getTripleStore() throws Exception {
@@ -981,7 +981,7 @@ public class WikiTask implements Callable<WikiTaskResult>,Cloneable {
    * 
    * @param rootMap
    * @param templateName
-   * @return
+   * @return the result of processing the template
    * @throws Exception
    */
   protected String processTemplate(Map<String, Object> rootMap,

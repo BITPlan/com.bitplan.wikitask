@@ -74,7 +74,7 @@ public class Section {
    * normalize the given anchor
    * 
    * @param anchor
-   * @return
+   * @return the normalized anchor
    */
   public static String normalizeAnchor(String anchor) {
     // FIXME - anchors with special characters?

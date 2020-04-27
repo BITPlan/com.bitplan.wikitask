@@ -34,7 +34,6 @@ import java.util.logging.Logger;
 import org.sidif.wiki.Reference.ReferenceType;
 
 import com.bitplan.mediawiki.japi.MediawikiApi;
-import com.bitplan.topic.WikiStatic.Wiki;
 
 /**
  * manager for Sources - it keeps track of sources from different pages and
@@ -157,13 +156,9 @@ public class ReferenceManager {
 	/**
 	 * add Sources from the given wiki with the given reference
 	 * 
-	 * @param wiki
-	 * @param pageAnchor
-	 *          - a pageTitle e.g. 'TestPage' or anchor e.g.
-	 *          'TestPage#TestSection'
+	 * @param reference
 	 * @throws Exception
-	 * @return the Reference to the Source
-	 */
+   */
 	public synchronized void addSources(Reference reference) throws Exception {
 		if (reference.referenceType != ReferenceType.INVALID) {
 			if (reference.isAvailable()) {
@@ -201,7 +196,7 @@ public class ReferenceManager {
 	 * get the section for the given reference
 	 * 
 	 * @param reference
-	 * @return
+	 * @return the Section
 	 * @throws Exception
 	 */
 	public Section getSection(Reference reference) throws Exception {
@@ -211,9 +206,9 @@ public class ReferenceManager {
 	}
 
 	/**
-	 * get the source for the given extractor
+	 * get the source for the given reference
 	 * 
-	 * @param sourceExtractor
+	 * @param reference
 	 * @return the source
 	 * @throws Exception
 	 */
@@ -292,7 +287,7 @@ public class ReferenceManager {
 	 * @param wiki
 	 * @param pageTitle
 	 * @param pageLink
-	 * @return
+	 * @return the Reference
 	 * @throws Exception
 	 */
 	public Reference getReference(MediawikiApi wiki, String pageTitle,
@@ -309,7 +304,7 @@ public class ReferenceManager {
 	 * get the given reference e.g. from "Topic#sidif"
 	 * 
 	 * @param link
-	 * @return
+	 * @return the Reference
 	 * @throws Exception
 	 */
 	public Reference getReference(String link) throws Exception {
@@ -321,7 +316,7 @@ public class ReferenceManager {
 	 * get the Reference by the given id
 	 * 
 	 * @param id
-	 * @return
+	 * @return the Reference for the given id
 	 */
 	public Reference getReferenceById(String id) {
 		Reference result = this.referenceByReferenceId.get(id);
@@ -365,7 +360,7 @@ public class ReferenceManager {
 	 * 
 	 * @param sslWiki
 	 * 
-	 * @return
+	 * @return the ReferenceManager for the given sslWiki
 	 */
 	public static ReferenceManager get(SSLWiki sslWiki) {
 		ReferenceManager rm = referenceManagerMap.get(sslWiki.getWikiid());
@@ -380,7 +375,7 @@ public class ReferenceManager {
 	 * get the reference Manager by the given wiki id
 	 * 
 	 * @param wikiid
-	 * @return
+	 * @return the reference manager for the wiki with the given id
 	 * @throws Exception
 	 */
 	public static ReferenceManager getByWikiId(String wikiid) throws Exception {
@@ -399,7 +394,7 @@ public class ReferenceManager {
 	 * reset the given SSL Wiki
 	 * 
 	 * @param sslWiki
-	 * @return
+	 * @return the ReferenceManager for which the reset has been done
 	 */
 	public static ReferenceManager reset(SSLWiki sslWiki) {
 		// check the current reference Manager

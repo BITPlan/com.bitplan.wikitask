@@ -81,10 +81,8 @@ public class XMLHelper {
 	/**
 	 * get the transformer for the given xsl source
 	 * 
-	 * @param params2
-	 * 
-	 * @param xsl
-	 * @return
+	 * @param params
+	 * @return the Transformer
 	 * @throws TransformerConfigurationException
 	 * @throws TransformerFactoryConfigurationError
 	 * @throws UnsupportedEncodingException
@@ -133,7 +131,7 @@ public class XMLHelper {
 	/**
 	 * get the Xslt Source
 	 * 
-	 * @return
+	 * @return the Source
 	 * @throws UnsupportedEncodingException
 	 */
 	public Source getXslt() throws UnsupportedEncodingException {
@@ -196,8 +194,7 @@ public class XMLHelper {
 	 * 
 	 * @param xml
 	 * @param type
-	 * @param type
-	 * @return
+	 * @return the Object converted from XML
 	 * @throws Exception
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -238,7 +235,7 @@ public class XMLHelper {
 	 * 
 	 * @param xml
 	 * @param clazz
-	 * @return
+	 * @return the object converted from XML
 	 * @throws Exception
 	 */
 	public Object fromXMLString(String xml, Class<?> clazz) throws Exception {
@@ -251,7 +248,7 @@ public class XMLHelper {
 	 * 
 	 * @param file
 	 * @param clazz
-	 * @return
+	 * @return the object converted from XML
 	 * @throws Exception
 	 */
 	public Object fromXMLFile(File file, Class<?> clazz) throws Exception {
@@ -267,7 +264,7 @@ public class XMLHelper {
 	 * get the JaxB Context for the given class
 	 * 
 	 * @param clazz
-	 * @return
+	 * @return the JAXBContext
 	 * @throws JAXBException
 	 */
 	@SuppressWarnings("rawtypes")
@@ -289,7 +286,7 @@ public class XMLHelper {
 	 * convert the target to XML Format
 	 * 
 	 * @param target
-	 * @return
+	 * @return the XML string serialization of the given target 
 	 * @throws Exception
 	 */
 	public String asXML(Object target) throws Exception {
@@ -307,7 +304,7 @@ public class XMLHelper {
 	 * convert the target to JSon Format
 	 * 
 	 * @param target
-	 * @return
+	 * @return the JSON string serialization of the given target
 	 * @throws Exception
 	 */
 	public String asJson(Object target) throws Exception {

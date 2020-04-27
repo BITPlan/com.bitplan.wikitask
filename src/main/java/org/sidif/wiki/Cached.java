@@ -37,7 +37,7 @@ public interface Cached {
 	
 	/**
 	 * get the age of this cached item
-	 * @return
+	 * @return the age of the cached item
 	 */
 	public String getAge();
 }

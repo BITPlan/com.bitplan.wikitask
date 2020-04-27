@@ -125,7 +125,6 @@ public class WikiTemplateResourceLoader implements ITemplateResourceLoader {
    * 
    * @param method
    * @param th
-   * @return the error Message
    */
   public void handle(String method, Throwable th) {
     String errMsg=getErrMessage(method, th);
@@ -136,7 +135,7 @@ public class WikiTemplateResourceLoader implements ITemplateResourceLoader {
    * get the resource for the given path
    * 
    * @param path
-   * @return
+   * @return the WikiTemplateResource
    * @throws Throwable
    */
   public WikiTemplateResource getResource(String path) throws Throwable {
@@ -180,7 +179,7 @@ public class WikiTemplateResourceLoader implements ITemplateResourceLoader {
    * register the given Template
    * @param key
    * @param wikiTemplate
-   * @return
+   * @return the TemplateClass
    */
   public TemplateClass registerTemplate(String key,WikiTemplateResource wikiTemplate ) {
     TemplateClass tc = new TemplateClass(wikiTemplate, engine);

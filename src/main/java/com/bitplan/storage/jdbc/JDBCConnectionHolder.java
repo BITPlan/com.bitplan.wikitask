@@ -54,7 +54,7 @@ public interface JDBCConnectionHolder {
 	/**
 	 * connect
 	 * @param connectionString
-	 * @return
+	 * @return true if connect was successful
 	 * @throws Exception
 	 */
 	public boolean connect(String connectionString) throws Exception;
@@ -65,7 +65,7 @@ public interface JDBCConnectionHolder {
 	 * @param dbname
 	 * @param user
 	 * @param password
-	 * @return
+	 * @return  true if connect was successful
 	 * @throws Exception
 	 */
 	public boolean connect(String host, String dbname, String user,
