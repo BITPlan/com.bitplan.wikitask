@@ -20,10 +20,7 @@
  */
 package org.sidif.wiki;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 import org.sidif.triple.Triple;
@@ -32,7 +29,6 @@ import org.sidif.triple.TripleStore;
 import org.sidif.util.TripleStoreBuilder;
 import org.sidif.util.TripleStoreDumper;
 
-import com.alibaba.fastjson.JSON;
 import com.bitplan.topic.TopicStatic.Topic;
 import com.bitplan.topic.TopicStatic.TopicManager;
 

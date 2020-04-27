@@ -24,8 +24,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ TestFreeMarker.class,TestTripleStore.class, TestWikiTask.class, TestPageCache.class
-    })
+@Suite.SuiteClasses({ TestFreeMarker.class, TestTripleStore.class,
+    TestWikiTask.class, TestPageCache.class, TestContextFactory.class })
 /**
  * TestSuite
  * 
@@ -34,5 +34,5 @@ import org.junit.runners.Suite;
  *         no content necessary - annotation has info
  */
 public class TestSuite {
-  public static boolean debug=false;
+  public static boolean debug = false;
 }
