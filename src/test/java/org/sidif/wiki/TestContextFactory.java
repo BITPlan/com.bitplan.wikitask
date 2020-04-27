@@ -62,6 +62,7 @@ public class TestContextFactory extends BaseTest {
 
   @Test
   public void testWikis() throws Exception {
+    if (this.isTravis()) return;
     WikiStatic.Wiki lwiki = WikiManager.getWiki("wiki");
     if (debug) {
       System.out.println("id: " + lwiki.getId());
@@ -99,6 +100,7 @@ public class TestContextFactory extends BaseTest {
 
   @Test
   public void testContextFactory() throws Exception {
+    if (this.isTravis()) return;
     ContextManager cm = getMasterContextManager();
     String json = cm.toJson();
     String sidif = cm.asSiDIF();
@@ -132,6 +134,8 @@ public class TestContextFactory extends BaseTest {
    */
   @Test
   public void testPropertiesBy() {
+    if (this.isTravis())
+      return;
     ContextManager cm = this.getMasterContextManager();
     Context mm = cm.mContextMap.get("MetaModel");
     assertNotNull(mm);
@@ -174,6 +178,8 @@ public class TestContextFactory extends BaseTest {
 
   @Test
   public void testSmartRQM() {
+    if (this.isTravis())
+      return;
     // TestSSL.setUpCredentials();
     ContextSetting cs = ContextSetting.fromParams(
         "wikiId:sg,sidifInput:SmartRQM#sidif,contextName:SmartRQM,maintopicName:RQProfile");
@@ -200,6 +206,7 @@ public class TestContextFactory extends BaseTest {
 
   @Test
   public void testContextSetting() {
+    if (this.isTravis()) return;
     ContextSetting cs = ContextSetting.fromParams(
         "wikiId:capri,tripleStoreMode:SMW,contextName:MetaModel,maintopicName:Topic");
     String json = cs.toJson();
@@ -223,6 +230,8 @@ public class TestContextFactory extends BaseTest {
 
   @Test
   public void testSiDIF_Difference() throws Exception {
+    if (this.isTravis())
+      return;
     // TestSSL.setUpCredentials();
     // ContextFactory.reset();
     ContextSetting csSiDIF = ContextSetting.fromParams(

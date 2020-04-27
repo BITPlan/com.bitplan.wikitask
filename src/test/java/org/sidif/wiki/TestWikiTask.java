@@ -33,6 +33,26 @@ public class TestWikiTask {
   boolean debug = false;
   protected static Logger LOGGER = Logger.getLogger("org.sidif.wiki");
   
+  /**
+   * get the WikiTask
+   * 
+   * @return
+   * @throws Exception
+   */
+  public static WikiTask getWikiTask() throws Exception {
+    String server = "http://wiki.bitplan.com";
+    String scriptpath = "/";
+    String contentlanguage = "en";
+    String page = "WikiTask_Tutorial";
+    String cmd = "debug";
+    String dialog = null;
+    WikiTask wikiTask = new WikiTask(null, server, scriptpath, contentlanguage,
+        page, cmd, null, "", dialog, null, "Freemarker", null, null);
+    wikiTask.prepareWiki();
+    wikiTask.referenceManager.getPageCache().check(true);
+    return wikiTask;
+  }
+  
   @Test
   public void testWikiTask() {
     // fail("Not yet implemented");
