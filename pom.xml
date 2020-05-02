@@ -44,6 +44,13 @@
 			<scope>test</scope>
 			<type>test-jar</type>
 		</dependency>
+		<!-- SSH support
+		  https://mvnrepository.com/artifact/com.jcraft/jsch -->
+		<dependency>
+			<groupId>com.jcraft</groupId>
+			<artifactId>jsch</artifactId>
+			<version>0.1.55</version>
+		</dependency>
 		<!-- freemarker template support -->
 		<dependency>
 			<artifactId>com.bitplan.rest.freemarker</artifactId>

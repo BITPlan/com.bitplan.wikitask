@@ -21,9 +21,12 @@
 package com.bitplan.storage.jdbc;
 
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -32,7 +35,6 @@ import java.util.Date;
  * 
  * See <a href="http://warren.mayocchi.com/2006/10/13/jdbc-resultset-mapper/">Warren Mayocchi Blog - JDBC ResultSet Mapper</a>
  * See <a href="http://resultsetmapper.sourceforge.net">ResultSetMapper on sourceforge</a>
- 
  * 
  * modified by:
  *  
@@ -41,6 +43,10 @@ import java.util.Date;
 public class JDBCDataSource implements DataSource {
 	protected ResultSet rs;
 
+	/**
+	 * construct me from the given resultSet
+	 * @param rs
+	 */
 	public JDBCDataSource(ResultSet rs) {
 		this.rs = rs;
 	}
@@ -111,6 +117,20 @@ public class JDBCDataSource implements DataSource {
 	public boolean next() throws Exception {
 		boolean result=rs.next();
 		return result;
+	}
+	
+	/**
+	 * get the column keys
+	 * @return - the keys
+	 * @throws Exception
+	 */
+	public List<String> keys() throws Exception {
+	  List<String> result=new ArrayList<String>();
+	  ResultSetMetaData md = rs.getMetaData();
+	  for (int col=1;col<=md.getColumnCount();col++) {
+	    result.add(md.getColumnName(col));
+	  }
+	  return result;
 	}
 
 }

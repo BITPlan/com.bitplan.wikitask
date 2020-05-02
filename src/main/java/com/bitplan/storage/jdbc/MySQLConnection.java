@@ -20,22 +20,6 @@
  */
 package com.bitplan.storage.jdbc;
 
-/*
- * Copyright (C) 2011 BITPlan GmbH
-
- Pater-Delp-Str. 1
- D-47877 Willich-Schiefbahn
-
- http://www.bitplan.com
-
- $HeadURL$
- $LastChangedDate$
- $LastChangedRevision$
- $LastChangedBy$
- $Id$
- */
-
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -77,7 +61,7 @@ public class MySQLConnection extends JDBCConnection  {
 			String password) throws Exception {
 		// avoid Cannot convert value '0000-00-00 00:00:00' from column 3 to TIMESTAMP 
 		String connectionString = "jdbc:mysql://" + host + ":"+getPort()+ "/" + dbname
-				+ "?user=" + user + "&password=" + password+"&useFastDateParsing=false&zeroDateTimeBehavior=convertToNull";
+				+ "?user=" + user + "&password=" + password+"&useFastDateParsing=false&zeroDateTimeBehavior=convertToNull&autoReconnect=true&useSSL=false";
 		return connect(connectionString);
 	}
 

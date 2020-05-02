@@ -22,6 +22,7 @@
 package com.bitplan.storage.jdbc;
 
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -40,7 +41,14 @@ public interface DataSource  {
 	boolean getBoolean(String string) throws Exception;
 	double getDouble(String string) throws Exception;
 	char getChar(String string) throws Exception;
-	
+	 /**
+   * get the column keys
+   * @return - the keys
+   * @throws Exception
+   */
+  List<String> keys() throws Exception;
+    
+
 	boolean next() throws Exception;
 	
 	// lifecycle methods

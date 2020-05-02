@@ -18,21 +18,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.sidif.wiki;
+package com.bitplan.storage.jdbc;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-
-@RunWith(Suite.class)
-@Suite.SuiteClasses({ TestSSH.class,TestFreeMarker.class, TestRythm.class,TestTripleStore.class,
-    TestWikiTask.class, TestPageCache.class, TestContextFactory.class })
 /**
- * TestSuite
- * 
+ * credentials for Database access 
  * @author wf
  *
- *         no content necessary - annotation has info
  */
-public class TestSuite {
-  public static boolean debug = false;
+public class Credentials {
+
+  String host;
+  String database;
+  String user;
+  String password;
+  
+  public String getHost() {
+    return host;
+  }
+  public void setHost(String host) {
+    this.host = host;
+  }
+  public String getDatabase() {
+    return database;
+  }
+  public void setDatabase(String database) {
+    this.database = database;
+  }
+  public String getUser() {
+    return user;
+  }
+  public void setUser(String user) {
+    this.user = user;
+  }
+  public String getPassword() {
+    return password;
+  }
+  public void setPassword(String password) {
+    this.password = password;
+  }
 }

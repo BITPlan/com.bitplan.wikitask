@@ -20,18 +20,13 @@
  */
 package org.sidif.wiki;
 
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import org.apache.commons.io.FileUtils;
 import org.sidif.triple.TripleStore;
 import org.sidif.triple.impl.TripleImpl;
 
+import com.bitplan.storage.jdbc.Credentials;
 import com.bitplan.storage.jdbc.DataSource;
 import com.bitplan.storage.jdbc.JDBCConnectionHolder;
 import com.bitplan.storage.jdbc.JDBCQuery;
@@ -47,39 +42,8 @@ public class SMW_Triples {
 	protected static Logger LOGGER = Logger.getLogger("org.sidif.wiki");
   public static String localSettingsFilename;
   
-  static Pattern nameValue = 
-      Pattern.compile("\\s*\\$([^= \t\r\n\f]*)\\s*=\\s*\"([^=\\s]*)\"\\s*;");
-      // Pattern.compile("^.*\\$([^=]+?).*=.*\"([^\"]+?)\".*$");
-  
   static final String tripleSQLQuery="select * from smw_triples_ns";
-  
-  /**
-   * get the name value map of variable settings
-   * @param settings
-   * @return the name/value Map
-   */
-  public static Map<String,String> getVariables(String settings) {
-    Map<String,String> result=new HashMap<String,String>();
-    Matcher m=nameValue.matcher(settings);
-    while(m.find()){
-      String name=m.group(1);
-      String value=m.group(2);
-      // System.out.println(name+"="+value);
-      result.put(name,value);
-    }
-    return result;
-  }
-  
-  /**
-   * get the given variable from the given settings
-   * @param varname
-   * @param settings
-   */
-  public static String getVariable(String varname,Map<String,String> settings) {
-    String result=settings.get(varname);
-    return result;
-  }
-  
+   
   /**
    * get the tripleStore from this wiki (default is including namespace info)
    * @return - the tripleStore
@@ -133,33 +97,25 @@ public class SMW_Triples {
    * @throws Exception 
    */
   public static TripleStore fromWiki(String localSettingsFilename, String query) throws Exception {
-    String localSettings=FileUtils.readFileToString(new File(localSettingsFilename),"utf-8");
-    Map<String, String> settings = getVariables(localSettings);
-    String host=getVariable("wgDBserver",settings);
-    String database=getVariable("wgDBname",settings);
-    String user=getVariable("wgDBuser",settings);
-    String password=getVariable("wgDBpassword",settings);
-    TripleStore tripleStore=SMW_Triples.fromJDBC(host, database,user,password,query);
+    Credentials c=WikiManager.getDBCredentials(localSettingsFilename); 
+    TripleStore tripleStore=SMW_Triples.fromJDBC(c,query);
     return tripleStore;
   }
 
   /**
    * get the tripleStore from the given JDBC Source
-   * @param host
-   * @param database
-   * @param user 
-   * @param password 
+   * @param c - the credentials to use
    * @param query - the query to execute
    * @return the TripleStore
    * @throws Exception 
    */
-  public static TripleStore fromJDBC(String host,String database, String user, String password, String query) throws Exception {
-  	LOGGER.log(Level.INFO, "getting TripleStore from database "+host+":"+database);
+  public static TripleStore fromJDBC(Credentials c, String query) throws Exception {
+  	LOGGER.log(Level.INFO, "getting TripleStore from database "+c.getHost()+":"+c.getDatabase());
     TripleStore result=new TripleStore();
     JDBCConnectionHolder connection=new MySQLConnection();
-    boolean connected=connection.connect(host,database,user,password);
+    boolean connected=connection.connect(c.getHost(),c.getDatabase(),c.getUser(),c.getPassword());
     if (!connected) {
-      throw new Exception("connection to mysql database "+database+" on "+host+" with user "+user+" failed!");
+      throw new Exception("connection to mysql database "+c.getDatabase()+" on "+c.getHost()+" with user "+c.getUser()+" failed!");
     }
     JDBCStorage storage=new JDBCStorage(connection);
     JDBCQuery jquery = storage.createQuery("smw_triple", query);
