@@ -890,7 +890,7 @@ public class TopicStatic {
         sourceName = sourceName.replace("Concept:", "");
         sourceName = sourceName.replace("Konzept:", "");
         property.values_from = "concept=" + sourceName;
-        property.inputType = "dropdown";
+        property.inputType = "combobox";
         properties.mPropertys.add(property);
       }
     }
