@@ -208,7 +208,7 @@ public class TestContextFactory extends BaseTest {
   public void testContextSetting() {
     if (this.isTravis()) return;
     ContextSetting cs = ContextSetting.fromParams(
-        "wikiId:capri,tripleStoreMode:SMW,contextName:MetaModel,maintopicName:Topic");
+        "wikiId:media,tripleStoreMode:SMW,contextName:MetaModel,maintopicName:Topic");
     String json = cs.toJson();
     debug = true;
     if (debug)
