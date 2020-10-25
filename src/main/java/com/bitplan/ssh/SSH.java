@@ -54,8 +54,6 @@ public class SSH {
    * 
    * @param user
    * @param host
-   * @param remotePort
-   * @param localPort
    */
   public SSH(String user, String host) {
     this.user = user;
