@@ -218,14 +218,14 @@ public class TestContextFactory extends BaseTest {
     assertEquals(TripleStoreMode.SMW, cs.getTripleStoreMode());
     assertEquals("media::smw", cs.getTripleStoreId());
     cs = ContextSetting.fromParams(
-        "wikiId:capri,sidifInput:Topic#sidif,contextName:MetaModel,maintopicName:Topic");
+        "wikiId:media,sidifInput:Topic#sidif,contextName:MetaModel,maintopicName:Topic");
     json = cs.toJson();
     if (debug)
       System.out.println(json);
     assertEquals("Topic", cs.getMaintopicName());
     assertEquals("MetaModel", cs.getContextName());
     assertEquals(TripleStoreMode.SiDIF, cs.getTripleStoreMode());
-    assertEquals("capri:Topic#sidif", cs.getTripleStoreId());
+    assertEquals("media:Topic#sidif", cs.getTripleStoreId());
   }
 
   @Test
