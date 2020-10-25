@@ -22,7 +22,7 @@
 		<!-- for README.md generation -->
 		<documentation.wiki>http://wiki.bitplan.com/index.php/com.bitplan.wikitask</documentation.wiki>
 		<!-- versions of other libraries to be used -->
-		<mediawiki-japi.version>0.1.05</mediawiki-japi.version>
+		<mediawiki-japi.version>0.1.06</mediawiki-japi.version>
 	</properties>
 	<dependencies>
 		<!-- mediawik-japi -->
