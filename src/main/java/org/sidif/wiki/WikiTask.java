@@ -32,6 +32,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Random;
@@ -688,7 +689,10 @@ public class WikiTask implements Callable<WikiTaskResult>,Cloneable {
    * @throws Exception
    */
   private void login(WikiTaskResult result) throws Exception {
-    String addr = this.httpHeaders.getRequestHeader("remote_addr").toString();
+    List<String> remoteAddrHeaders = this.httpHeaders.getRequestHeader("remote_addr");
+    if (remoteAddrHeaders.size()!=1)
+      throw new Exception("need 1 remote_addr but got "+remoteAddrHeaders.size());
+    String addr = remoteAddrHeaders.get(0);
     String user = this.input.trim();
     result.html = "access denied for " + user;
     AccessRight right = getRight(user);
