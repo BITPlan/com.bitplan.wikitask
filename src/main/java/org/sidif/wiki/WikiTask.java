@@ -688,7 +688,7 @@ public class WikiTask implements Callable<WikiTaskResult>,Cloneable {
    * @throws Exception
    */
   private void login(WikiTaskResult result) throws Exception {
-    String addr = "?"; // @TODO get remote addr / url
+    String addr = this.httpHeaders.getRequestHeader("remote_addr").toString();
     String user = this.input.trim();
     result.html = "access denied for " + user;
     AccessRight right = getRight(user);
