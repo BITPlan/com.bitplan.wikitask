@@ -48,6 +48,7 @@ public class WikiTaskServer extends RestServerImpl {
     settings.setContextPath("/wikiserver".toLowerCase());
     // add a static handler
     settings.addClassPathHandler("/", "com/bitplan/wikitask/webcontent/");
+    // BITPlan specific parts - see org.sidif.wiki for Intranet use
     //settings.addClassPathHandler("/resthtmlview", "com/bitplan/resthtmlview/webcontent/");
     //settings.addClassPathHandler("/stockicons","com/bitplan/icons/");
     // settings.addClassPathHandler("/fileicon", "com/bitplan/clientutils/rest/icons/");
