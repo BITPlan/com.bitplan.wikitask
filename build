@@ -1,0 +1,4 @@
+#!/bin/bash
+# WF 2021-05-10
+# build locally
+mvn install -DskipTests -Dgpg.skip
