@@ -2,7 +2,7 @@
  *
  * This file is part of the https://github.com/BITPlan/com.bitplan.wikitask open source project
  *
- * Copyright 2015-2020 BITPlan GmbH https://github.com/BITPlan
+ * Copyright 2015-2022 BITPlan GmbH https://github.com/BITPlan
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

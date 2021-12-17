@@ -1,4 +1,4 @@
-<!-- Copyright (c) 2020 BITPlan GmbH Project details and license at: https://github.com/BITPlan/com.bitplan.wikitask -->
+<!-- Copyright (c) 2020-2022 BITPlan GmbH Project details and license at: https://github.com/BITPlan/com.bitplan.wikitask -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -6,14 +6,14 @@
 	<parent>
 		<groupId>com.bitplan.pom</groupId>
 		<artifactId>com.bitplan.pom</artifactId>
-		<version>0.0.34</version>
+		<version>0.0.35</version>
 		<relativePath>../com.bitplan.pom/pom.xml</relativePath>
 	</parent>
 	<groupId>com.bitplan</groupId>
 	<artifactId>com.bitplan.wikitask</artifactId>
 	<packaging>jar</packaging>
 	<name>com.bitplan.wikitask</name>
-	<version>0.0.2</version>
+	<version>0.0.3</version>
 	<description>WikiTask Server for Semantic MediaWiki based ProfiWiki page generation</description>
 	<url>https://github.com/BITPlan/com.bitplan.wikitask</url>
 	<properties>
